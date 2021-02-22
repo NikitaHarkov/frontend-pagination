@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import pagination from './utils';
 
 const url = 'https://api.github.com/users/john-smilga/followers?&per_page=100';
 
@@ -11,6 +12,7 @@ export const useFetch = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      pagination(data);
       setData(data);
     } catch (err) {
       console.log(err);
