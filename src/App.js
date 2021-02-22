@@ -4,7 +4,7 @@ import Follower from './Follower';
 
 function App() {
   const { loading, data } = useFetch();
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(0);
   const [followers, setFollwers] = useState([]);
 
   useEffect(() => {
