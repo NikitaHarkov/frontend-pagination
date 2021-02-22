@@ -12,8 +12,7 @@ export const useFetch = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      pagination(data);
-      setData(data);
+      setData(pagination(data));
     } catch (err) {
       console.log(err);
     }
